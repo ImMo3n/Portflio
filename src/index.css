@@ -128,6 +128,26 @@ table {
   border-spacing: 0;
 }
 a {
-  color: inherit;
-  text-decoration: none;
+  all: unset;
+}
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* My global styles */
+html {
+  /* font-family: "Noto Sans Arabic", sans-serif; */
+  font-family: "Inter", sans-serif;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+p {
+  line-height: 1.3;
 }
