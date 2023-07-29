@@ -1,39 +1,11 @@
 import { PersianH2, PersianParagraph } from "../CommonStyles";
+import { LanguageElement } from '../LanguageElement'
 
 export const MiniLibrary = () => {
-  return (
-    <>
-      <h2>Mini library of JQuery functions</h2>
-      <PersianH2>کتابخانه توابع jQuery</PersianH2>
-      <p>
-        As you may know, We used Processmaker as front-end and back-end for our
-        web pages, and it uses JQuery library for it’s front-end. The Javascript
-        library that was included with Processmaker was extensive, but it was
-        lacking in some of the parts especially when it came to “grid”s.
-      </p>
-      <p>
-        Grids in Processmaker are table like structures that has a bunch of
-        input elements inside them. So if you want to for example want your
-        users to fill a form for 5 people instead of submitting 5 forms you
-        would only submit one form with with a grid of 5 rows of information.
-      </p>
-      <p>
-        As you can guess this was very useful for developing, we used it all the
-        time in our projects. The problem was the functions included with
-        Processmaker wasn’t enough, and the recommended way of defining
-        listeners for inputs inside and/or manipulating data inside grid inputs
-        wasn’t ideal.
-      </p>
-      <p>
-        So I began to develop some utility functions that would be reusable
-        anywhere and not be tied to a single app.
-      </p>
-      <p>
-        The result is this mini library. The quality of the code varies, for
-        some of them that were used a lot were revised a couple of times, others
-        stayed the same as I first wrote them.
-      </p>
-      <PersianParagraph>
+
+  const PersianMiniLibrary = () => <>
+    <PersianH2>کتابخانه توابع jQuery</PersianH2>
+    <PersianParagraph>
         همانطور که می‌دانید ما از Processmaker به عنوان رابط کاربری و پشتیبانی
         برای صفحات وب خود استفاده می‌کردیم و این ابزار از کتابخانه JQuery در بخش
         رابط کاربری خود استفاده می‌کرد. کتابخانه JavaScript که با Processmaker
@@ -64,6 +36,38 @@ export const MiniLibrary = () => {
         برخی از توابع که بسیار استفاده شدند چندین بار بازنگری شدند، اما دیگری
         همانند زمان اولیه‌ی نوشتنشان باقی ماندند.
       </PersianParagraph>
-    </>
-  );
+  </>
+
+  const EnglishMiniLibrary = () => <>
+    <h2>Mini library of JQuery functions</h2>
+    <p>
+      As you may know, We used Processmaker as front-end and back-end for our
+      web pages, and it uses JQuery library for it’s front-end. The Javascript
+      library that was included with Processmaker was extensive, but it was
+      lacking in some of the parts especially when it came to “grid”s.
+    </p>
+    <p>
+      Grids in Processmaker are table like structures that has a bunch of
+      input elements inside them. So if you want to for example want your
+      users to fill a form for 5 people instead of submitting 5 forms you
+      would only submit one form with with a grid of 5 rows of information.
+    </p>
+    <p>
+      As you can guess this was very useful for developing, we used it all the
+      time in our projects. The problem was the functions included with
+      Processmaker wasn’t enough, and the recommended way of defining
+      listeners for inputs inside and/or manipulating data inside grid inputs
+      wasn’t ideal.
+    </p>
+    <p>
+      So I began to develop some utility functions that would be reusable
+      anywhere and not be tied to a single app.
+    </p>
+    <p>
+      The result is this mini library. The quality of the code varies, for
+      some of them that were used a lot were revised a couple of times, others
+      stayed the same as I first wrote them.
+    </p>
+  </>
+  return <LanguageElement PersianElement={PersianMiniLibrary} EnglishElement={EnglishMiniLibrary}/>;
 };

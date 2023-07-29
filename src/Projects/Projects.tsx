@@ -8,6 +8,8 @@ import { SampleExperimentCD } from "./SampleExperimentCD";
 import { SampleExperimentM } from "./SampleExperimentM";
 import { WeatherApp } from "./WeatherApp";
 
+import {LanguageElement} from '../LanguageElement';
+
 export const Projects = () => {
   const styles = useTheme();
 
@@ -25,10 +27,12 @@ export const Projects = () => {
     },
   }))``;
 
+  const PersianTitle = () => <PersianH1>پروژه‌ها</PersianH1>
+  const EnglishTitle = () => <h1>Projects</h1>
+
   return (
     <ModifiedWrapper>
-      <h1>Projects</h1>
-      <PersianH1>پروژه‌ها</PersianH1>
+      <LanguageElement PersianElement={PersianTitle} EnglishElement={EnglishTitle}/>
       <ModifiedProjectWrapper>
         <MiniLibrary />
       </ModifiedProjectWrapper>

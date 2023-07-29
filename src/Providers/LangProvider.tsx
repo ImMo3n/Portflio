@@ -6,7 +6,7 @@ export enum Languages {
   en = "en",
 }
 
-const LanguageContext = createContext<Languages>(Languages.fa);
+const LanguageContext = createContext<Languages>(Languages.en);
 const LanguageTogglerContex = createContext(() => {});
 
 export const useLanguage = () => {
@@ -22,7 +22,7 @@ export const LanguageProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [language, setLanguage] = useState<Languages>(Languages.fa);
+  const [language, setLanguage] = useState<Languages>(Languages.en);
 
   const toggleLanguage = () => {
     setLanguage((prev) =>
