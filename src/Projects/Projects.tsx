@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PersianH1 } from "../CommonStyles";
+import { CategoryTitle } from "../CommonStyles";
 import { useTheme } from "../Providers/ThemeProvider";
 import { CentralOffice } from "./CentralOffice";
 import { MiniLibrary } from "./MiniLibrary";
@@ -8,7 +8,7 @@ import { SampleExperimentCD } from "./SampleExperimentCD";
 import { SampleExperimentM } from "./SampleExperimentM";
 import { WeatherApp } from "./WeatherApp";
 
-import {LanguageElement} from '../LanguageElement';
+import { LanguageElement } from "../LanguageElement";
 
 export const Projects = () => {
   const styles = useTheme();
@@ -27,43 +27,57 @@ export const Projects = () => {
     },
   }))``;
 
-  const PersianTitle = () => <PersianH1>پروژه‌ها</PersianH1>
-  const EnglishTitle = () => <h1>Projects</h1>
+  const PersianTitle = () => <CategoryTitle>پروژه‌ها</CategoryTitle>;
+  const EnglishTitle = () => <CategoryTitle>Projects</CategoryTitle>;
 
   return (
-    <ModifiedWrapper>
-      <LanguageElement PersianElement={PersianTitle} EnglishElement={EnglishTitle}/>
-      <ModifiedProjectWrapper>
-        <MiniLibrary />
-      </ModifiedProjectWrapper>
-      <ModifiedProjectWrapper>
-        <SampleExperimentCD />
-      </ModifiedProjectWrapper>
-      <ModifiedProjectWrapper>
-        <SampleExperimentM />
-      </ModifiedProjectWrapper>
-      <ModifiedProjectWrapper>
-        <CentralOffice />
-      </ModifiedProjectWrapper>
-      <ModifiedProjectWrapper>
-        <WeatherApp />
-      </ModifiedProjectWrapper>
-      <ModifiedProjectWrapper>
-        <MovieSearchApp />
-      </ModifiedProjectWrapper>
-    </ModifiedWrapper>
+    <>
+      <LanguageElement
+        PersianElement={PersianTitle}
+        EnglishElement={EnglishTitle}
+      />
+      <ModifiedWrapper>
+        <ModifiedProjectWrapper>
+          <MiniLibrary />
+        </ModifiedProjectWrapper>
+        <ModifiedProjectWrapper>
+          <SampleExperimentCD />
+        </ModifiedProjectWrapper>
+        <ModifiedProjectWrapper>
+          <SampleExperimentM />
+        </ModifiedProjectWrapper>
+        <ModifiedProjectWrapper>
+          <CentralOffice />
+        </ModifiedProjectWrapper>
+        <ModifiedProjectWrapper>
+          <WeatherApp />
+        </ModifiedProjectWrapper>
+        <ModifiedProjectWrapper>
+          <MovieSearchApp />
+        </ModifiedProjectWrapper>
+      </ModifiedWrapper>
+    </>
   );
 };
 
 const ProjectWrapper = styled.article`
-  padding: 1rem;
+  padding: 2rem;
+  margin-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 10px;
+
+  & section:first-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
 `;
 
 const Wrapper = styled.section`
-  max-width: 900px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 2rem;
+  gap: 1.5rem;
 `;

@@ -1,4 +1,4 @@
-import { PersianH1 } from "../CommonStyles";
+import { CategoryTitle } from "../CommonStyles";
 import { BootstrapSkill } from "./BootstrapSkill";
 import { CssSkill } from "./CssSkill";
 import { JavascriptSkill } from "./JavascriptSkill";
@@ -11,39 +11,86 @@ import { TailwindSkill } from "./TailwindSkill";
 import { TypescriptSkill } from "./TypesciptSkill";
 import { VueSkill } from "./VueSkill";
 
-// import { useLanguage, Languages } from '../Providers/LangProvider'
 import { LanguageElement } from "../LanguageElement";
+import styled from "styled-components";
+import { useTheme } from "../Providers/ThemeProvider";
 
 export const Skills = () => {
-  // const language = useLanguage();
-  // console.log(language);
+  const styles = useTheme();
 
-  // let SkillTitle = () => <></>;
-  // if(language === Languages.fa){
-  //   SkillTitle = () => (<PersianH1>مهارت‌ها</PersianH1>)
-  // }
-  // else if(language === Languages.en){
-  //   SkillTitle = () => (<h1>Skills</h1>)
-  // }
+  const PerisanTitle = () => <CategoryTitle>مهارت‌ها</CategoryTitle>;
+  const EnglishTitle = () => <CategoryTitle>Skills</CategoryTitle>;
 
-  const PerisanTitle = () => <PersianH1>مهارت‌ها</PersianH1>
-  const EnglishTitle = () => <h1>Skills</h1>
+  const ModifiedSkillWrapper = styled(SkillWrapper).attrs(() => ({
+    style: {
+      backgroundColor: styles.surfaceColor,
+      color: styles.color,
+    },
+  }))``;
+
+  const ModifiedWrapper = styled(Wrapper).attrs(() => ({
+    style: {
+      backgroundColor: styles.backgroundColor,
+      color: styles.color,
+    },
+  }))``;
 
   return (
     <>
-      <LanguageElement PersianElement={PerisanTitle} EnglishElement={EnglishTitle}/>
-      {/* <SkillTitle /> */}
-      <JavascriptSkill />
-      <ReactSkill />
-      <VueSkill />
-      <TypescriptSkill />
-      <CssSkill />
-      <TailwindSkill />
-      <BootstrapSkill />
-      <StyledComponentSkill />
-      <PHPSkill />
-      <MysqlSkill />
-      <JQuerySkill />
+      <LanguageElement
+        PersianElement={PerisanTitle}
+        EnglishElement={EnglishTitle}
+      />
+      <ModifiedWrapper>
+        <ModifiedSkillWrapper>
+          <JavascriptSkill />
+        </ModifiedSkillWrapper>
+        <ModifiedSkillWrapper>
+          <ReactSkill />
+        </ModifiedSkillWrapper>
+        <ModifiedSkillWrapper>
+          <VueSkill />
+        </ModifiedSkillWrapper>
+        <ModifiedSkillWrapper>
+          <TypescriptSkill />
+        </ModifiedSkillWrapper>
+        <ModifiedSkillWrapper>
+          <CssSkill />
+        </ModifiedSkillWrapper>
+        <ModifiedSkillWrapper>
+          <TailwindSkill />
+        </ModifiedSkillWrapper>
+        <ModifiedSkillWrapper>
+          <BootstrapSkill />
+        </ModifiedSkillWrapper>
+        <ModifiedSkillWrapper>
+          <StyledComponentSkill />
+        </ModifiedSkillWrapper>
+        <ModifiedSkillWrapper>
+          <PHPSkill />
+        </ModifiedSkillWrapper>
+        <ModifiedSkillWrapper>
+          <MysqlSkill />
+        </ModifiedSkillWrapper>
+        <ModifiedSkillWrapper>
+          <JQuerySkill />
+        </ModifiedSkillWrapper>
+      </ModifiedWrapper>
     </>
   );
 };
+
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-inline: 1rem;
+`;
+
+const SkillWrapper = styled.article`
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 10px;
+`;

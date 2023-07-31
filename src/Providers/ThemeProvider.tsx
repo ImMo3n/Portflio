@@ -48,8 +48,13 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   const setRandomTheme = () => {
     const themeArray = darkTheme === DarkTheme.dark ? darkThemes : lightThemes;
-    const randomIndex = Math.floor(Math.random() * themeArray.length);
-    const theme = themeArray[randomIndex];
+    const nonRepeatingThemeArray = themeArray.filter(
+      (theme) => theme.backgroundColor !== currentTheme.backgroundColor
+    );
+    const randomIndex = Math.floor(
+      Math.random() * nonRepeatingThemeArray.length
+    );
+    const theme = nonRepeatingThemeArray[randomIndex];
     setCurrentTheme(theme);
   };
 

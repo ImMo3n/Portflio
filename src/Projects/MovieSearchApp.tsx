@@ -1,9 +1,24 @@
-import { PersianH2, PersianParagraph } from "../CommonStyles";
+import { LanguageElement } from "../LanguageElement";
+import { ProjectComponent } from "./ProjectComponent";
+import { TechnologiesUsed } from "./TechnologiesUsed";
 
 export const MovieSearchApp = () => {
-  return (
-    <>
-      <h2>Movie Search App (Personal Project)</h2>
+  const PersianMovieSearchApp = () => (
+    <ProjectComponent title="برنامه جستجوی فیلم و سریال" icon="film.svg">
+      <p>
+        یک برنامه‌ی جستجوی فیلم که به کاربران اجازه می‌دهد با استفاده از یک API،
+        فیلم‌ها را بر اساس عنوان یا بازیگر جستجو کنند.
+      </p>
+      <p>
+        تکنولوژی‌های استفاده شده برای این پروژه عبارتند از: React.js،
+        Typescript، styled-components (CSS-in-JS)، و React Query (Tanstack
+        Query).
+      </p>
+    </ProjectComponent>
+  );
+
+  const EnglishMovieSearchApp = () => (
+    <ProjectComponent title="MovieSearch App" icon="film.svg">
       <p>
         A movie search app that allows users to search for movies by title, or
         actor using an API.
@@ -12,16 +27,18 @@ export const MovieSearchApp = () => {
         Technologies used for this project: React js, Typescript, styled
         components (css), React query (Tanstack query).
       </p>
-      <PersianH2>MovieSearch App</PersianH2>
-      <PersianParagraph>
-        یک برنامه‌ی جستجوی فیلم که به کاربران اجازه می‌دهد با استفاده از یک API،
-        فیلم‌ها را بر اساس عنوان یا بازیگر جستجو کنند.
-      </PersianParagraph>
-      <PersianParagraph>
-        تکنولوژی‌های استفاده شده برای این پروژه عبارتند از: React.js،
-        Typescript، styled-components (CSS-in-JS)، و React Query (Tanstack
-        Query).
-      </PersianParagraph>
+    </ProjectComponent>
+  );
+
+  return (
+    <>
+      <LanguageElement
+        PersianElement={PersianMovieSearchApp}
+        EnglishElement={EnglishMovieSearchApp}
+      />
+      <TechnologiesUsed
+        techArray={["react", "typescript", "styled-component", "react-query"]}
+      />
     </>
   );
 };

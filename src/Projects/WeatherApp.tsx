@@ -1,34 +1,41 @@
-import { PersianH2, PersianParagraph } from "../CommonStyles";
+import { LanguageElement } from "../LanguageElement";
+import { ProjectComponent } from "./ProjectComponent";
+import { TechnologiesUsed } from "./TechnologiesUsed";
 
 export const WeatherApp = () => {
-  const PersianWeatherApp = () => <>
-    <PersianH2>Weather App</PersianH2>
-    <PersianParagraph>
-      یک برنامه‌ی هواشناسی که از طریق یک رابط برنامه‌نویسی (API)، اطلاعات
-      هواشناسی فعلی، پیش‌بینی هوا، و آلودگی هوا را برای مکان فعلی کاربر نمایش
-      می‌دهد.
-    </PersianParagraph>
-    <PersianParagraph>
-      تکنولوژی‌های استفاده شده برای این پروژه عبارتند از: React.js،
-      Typescript، و Tailwind CSS.
-    </PersianParagraph>
-  </>;
+  const PersianWeatherApp = () => (
+    <ProjectComponent title="برنامه پیشبینی آب و هوا" icon="sun.svg">
+      <p>
+        یک برنامه‌ی هواشناسی که از طریق یک رابط برنامه‌نویسی (API)، اطلاعات
+        هواشناسی فعلی، پیش‌بینی هوا، و آلودگی هوا را برای مکان فعلی کاربر نمایش
+        می‌دهد.
+      </p>
+      <p>
+        تکنولوژی‌های استفاده شده برای این پروژه عبارتند از: React.js،
+        Typescript، و Tailwind CSS.
+      </p>
+    </ProjectComponent>
+  );
 
-  const EnglishWeatherApp = () => <>
-    <h2>Weather App (Personal Project)</h2>
-    <p>
-      A weather app that displays the current weather, forecast, air pollution
-      for a given location using an API.
-    </p>
-    <p>
-      Technologies used for this project: React js, Typescript, Tailwind css
-    </p>
-  </>
+  const EnglishWeatherApp = () => (
+    <ProjectComponent title="Weather App" icon="sun.svg">
+      <p>
+        A weather app that displays the current weather, forecast, air pollution
+        for a given location using an API.
+      </p>
+      <p>
+        Technologies used for this project: React js, Typescript, Tailwind css
+      </p>
+    </ProjectComponent>
+  );
 
   return (
     <>
-      
-      
+      <LanguageElement
+        PersianElement={PersianWeatherApp}
+        EnglishElement={EnglishWeatherApp}
+      />
+      <TechnologiesUsed techArray={["react", "typescript", "tailwind"]} />
     </>
   );
 };

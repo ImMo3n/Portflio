@@ -1,7 +1,6 @@
-export const ReactQueryIcon = () => (
-  <svg
+<svg
     xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
+    xmlns-xlink="http://www.w3.org/1999/xlink"
     width="256px"
     height="230px"
     viewBox="0 0 256 230"
@@ -27,4 +26,3 @@ export const ReactQueryIcon = () => (
       </g>
     </g>
   </svg>
-);
