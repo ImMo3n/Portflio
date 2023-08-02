@@ -5,6 +5,7 @@ import {
   useTheme,
   useToggleDarkTheme,
 } from "./Providers/ThemeProvider";
+import { Slider } from "./Slider";
 
 export const Settings = () => {
   const styles = useTheme();
@@ -45,9 +46,11 @@ export const Settings = () => {
     </ModifiedWrapper>
   );
 };
+// <Slider />
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: flex-end;
   gap: 1rem;
   position: sticky;
   top: 0;
