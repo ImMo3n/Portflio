@@ -1,24 +1,50 @@
 import styled from "styled-components";
-import { useToggleLanguage } from "./Providers/LangProvider";
+import { Languages, useLanguage, useToggleLanguage } from "./Providers/LangProvider";
 import {
+  DarkTheme,
+  useDarkTheme,
   useSetRandomTheme,
   useTheme,
   useToggleDarkTheme,
 } from "./Providers/ThemeProvider";
+import { CiDark, CiLight } from 'react-icons/ci';
+import {BsPalette} from 'react-icons/bs';
 import { Slider } from "./Slider";
 
 export const Settings = () => {
+  const theme = useDarkTheme();
   const styles = useTheme();
+  const language = useLanguage();
+
 
   const setRandomTheme = useSetRandomTheme();
   const toggleDarkMode = useToggleDarkTheme();
   const toggleLanguage = useToggleLanguage();
+
+  
 
   const ModifiedWrapper = styled(Wrapper).attrs(() => ({
     style: {
       backgroundColor: styles.backgroundColor,
     },
   }))``;
+
+  const ModifiedIconWrapper = styled(IconWrapper).attrs(() => ({
+    style: {
+      backgroundColor: styles.surfaceColor,
+      padding: '0.25rem',
+      borderRadius: 34,
+      outline: '2px solid currentColor',
+    },
+  }))``;
+
+  
+
+  const ToggleDarkThemeTitle = () => <IconWrapper><CiLight /></IconWrapper>;
+  const ToggleLightThemeTitle = () => <IconWrapper><CiDark /></IconWrapper>;
+
+  const PersianToggleTitle = () => <span>FA</span>;
+  const EnglishToggleTitle = () => <span>EN</span>;
 
   return (
     <ModifiedWrapper dir="ltr">
@@ -27,26 +53,26 @@ export const Settings = () => {
           setRandomTheme();
         }}
       >
-        Change Theme
+      <ModifiedIconWrapper>
+        <BsPalette />
+      </ModifiedIconWrapper>
       </button>
-      <button
-        onClick={() => {
-          toggleDarkMode();
-        }}
-      >
-        Toggle Dark/light Mode
-      </button>
-      <button
-        onClick={() => {
-          toggleLanguage();
-        }}
-      >
-        Toggle Language
-      </button>
+
+      <Slider 
+        onChangeHandler={toggleDarkMode} 
+        checkedValue={theme === DarkTheme.light} 
+        FalseElement={ToggleDarkThemeTitle} 
+        TrueElement={ToggleLightThemeTitle}
+      />
+      <Slider 
+        onChangeHandler={toggleLanguage} 
+        checkedValue={language === Languages.fa} 
+        FalseElement={EnglishToggleTitle} 
+        TrueElement={PersianToggleTitle}
+      />
     </ModifiedWrapper>
   );
 };
-// <Slider />
 
 const Wrapper = styled.div`
   display: flex;
@@ -58,3 +84,9 @@ const Wrapper = styled.div`
   border-bottom: 2px solid currentColor;
   margin-inline: -1rem;
 `;
+
+const IconWrapper = styled.span`
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+`

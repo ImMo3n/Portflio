@@ -5,10 +5,12 @@ export const Slider = ({
   onChangeHandler,
   TrueElement = () => <></>,
   FalseElement = () => <></>,
+  checkedValue,
 }: {
   onChangeHandler: () => void;
   TrueElement?: () => JSX.Element;
   FalseElement?: () => JSX.Element;
+  checkedValue: boolean;
 }) => {
   const theme = useTheme();
 
@@ -20,6 +22,7 @@ export const Slider = ({
           onChange={() => {
             onChangeHandler();
           }}
+          checked={checkedValue}
         />
         <Span backgroundColor={theme.surfaceColor}>
           <TrueElement />
@@ -37,7 +40,6 @@ const Span = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  /* background-color: #ccc; */
   -webkit-transition: 0.2s;
   transition: 0.2s;
   border-radius: 34px;

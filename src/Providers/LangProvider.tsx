@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export enum Languages {
   fa = "fa",
@@ -29,6 +29,11 @@ export const LanguageProvider = ({
       prev === Languages.fa ? Languages.en : Languages.fa
     );
   };
+
+  useEffect(() => {
+    if(language === Languages.fa) document.title = 'رزومه محسن افشاری'
+    else if(language === Languages.en) document.title = 'Resume of Mohsen Afshari'
+  })
 
   return (
     <LanguageContext.Provider value={language}>
