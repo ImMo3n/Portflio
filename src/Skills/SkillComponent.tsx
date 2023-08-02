@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ImageIcon } from "../ImageIcon";
-import { useTheme } from "../Providers/ThemeProvider";
+import { TStyles, useTheme } from "../Providers/ThemeProvider";
 
 export const SkillComponent = ({
   title,
@@ -24,6 +24,10 @@ export const SkillComponent = ({
   );
 };
 
+type ContentWrapperProps = {
+  styles: TStyles;
+};
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,7 +38,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const ContentWrapper = styled.section`
+const ContentWrapper = styled.section<ContentWrapperProps>`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

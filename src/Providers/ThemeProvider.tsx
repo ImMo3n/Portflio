@@ -6,6 +6,13 @@ export enum DarkTheme {
   dark = "dark",
 }
 
+export type TStyles = {
+  backgroundColor: string;
+  surfaceColor: string;
+  color: string;
+  secondColor: string;
+};
+
 const defaultTheme = {
   // default style is dark mode
   // office gray

@@ -8,7 +8,6 @@ export const LanguageElement = ({
   EnglishElement: () => JSX.Element;
 }) => {
   const language = useLanguage();
-  console.log(language);
 
   let Element = () => <></>;
   if (language === Languages.fa) {

@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { useTheme } from "./Providers/ThemeProvider";
+import { TStyles, useTheme } from "./Providers/ThemeProvider";
 
 export const Slider = ({
   onChangeHandler,
@@ -24,7 +24,7 @@ export const Slider = ({
           }}
           checked={checkedValue}
         />
-        <Span backgroundColor={theme.surfaceColor}>
+        <Span styles={theme}>
           <TrueElement />
           <FalseElement />
         </Span>
@@ -33,7 +33,11 @@ export const Slider = ({
   );
 };
 
-const Span = styled.span`
+type SpanPropTypes = {
+  styles: TStyles;
+};
+
+const Span = styled.span<SpanPropTypes>`
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -49,7 +53,7 @@ const Span = styled.span`
   justify-content: center;
   gap: 8px;
   user-select: none;
-  background-color: ${(props) => props.backgroundColor};
+  background-color: ${(props) => props.styles.surfaceColor};
   outline: 2px solid currentColor;
 
   &::before {

@@ -8,7 +8,12 @@ export const ImageIcon = ({ icon, size }: { icon: string; size: number }) => {
   );
 };
 
-const IconWrapper = styled.div`
+type IconWrapperProps = {
+  size: number;
+  icon: string;
+};
+
+const IconWrapper = styled.div<IconWrapperProps>`
   border-radius: 5px;
   flex-shrink: 0;
   line-height: 0;
