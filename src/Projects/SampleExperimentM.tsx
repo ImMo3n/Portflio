@@ -1,4 +1,5 @@
 import { LanguageElement } from "../LanguageElement";
+import { GitLink } from "./GitLink";
 import { ProjectComponent } from "./ProjectComponent";
 import { TechnologiesUsed } from "./TechnologiesUsed";
 
@@ -68,6 +69,7 @@ export const SampleExperimentM = () => {
         PersianElement={PersianSampleExperimentM}
         EnglishElement={EnglishSampleExperimentM}
       />
+      <GitLink link={"https://github.com/ImMo3n/PrintFormatM"}/>
       <TechnologiesUsed
         techArray={["jquery", "vue", "php", "laravel", "mysql", "kendo"]}
       />

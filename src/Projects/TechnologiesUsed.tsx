@@ -32,4 +32,5 @@ const TechnologiesWrapper = styled.section`
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 `;

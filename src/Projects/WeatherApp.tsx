@@ -1,4 +1,5 @@
 import { LanguageElement } from "../LanguageElement";
+import { GitLink } from "./GitLink";
 import { ProjectComponent } from "./ProjectComponent";
 import { TechnologiesUsed } from "./TechnologiesUsed";
 
@@ -35,6 +36,7 @@ export const WeatherApp = () => {
         PersianElement={PersianWeatherApp}
         EnglishElement={EnglishWeatherApp}
       />
+      <GitLink link={"https://github.com/ImMo3n/Weather"}/>
       <TechnologiesUsed techArray={["react", "typescript", "tailwind"]} />
     </>
   );

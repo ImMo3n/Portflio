@@ -1,4 +1,5 @@
 import { LanguageElement } from "../LanguageElement";
+import { GitLink } from "./GitLink";
 import { ProjectComponent } from "./ProjectComponent";
 
 export const MiniLibrary = () => {
@@ -71,12 +72,16 @@ export const MiniLibrary = () => {
         some of them that were used a lot were revised a couple of times, others
         stayed the same as I first wrote them.
       </p>
+      
     </ProjectComponent>
   );
   return (
+    <>
     <LanguageElement
       PersianElement={PersianMiniLibrary}
       EnglishElement={EnglishMiniLibrary}
     />
+    <GitLink link={"https://github.com/ImMo3n/jQueryMiniLibrary"}/>
+    </>
   );
 };

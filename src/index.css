@@ -147,6 +147,6 @@ h2 {
   font-size: 2rem;
   font-weight: 600;
 }
-p, a {
+p, a, h3 {
   line-height: 1.4;
 }

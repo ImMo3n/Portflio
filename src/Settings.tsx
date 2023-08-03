@@ -78,8 +78,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-  position: sticky;
-  top: 0;
+  /* position: sticky; */
+  /* top: 0; */
   padding: 1rem 1rem;
   border-bottom: 2px solid currentColor;
   margin-inline: -1rem;

@@ -1,4 +1,5 @@
 import { LanguageElement } from "../LanguageElement";
+import { GitLink } from "./GitLink";
 import { ProjectComponent } from "./ProjectComponent";
 import { TechnologiesUsed } from "./TechnologiesUsed";
 
@@ -36,6 +37,7 @@ export const MovieSearchApp = () => {
         PersianElement={PersianMovieSearchApp}
         EnglishElement={EnglishMovieSearchApp}
       />
+      <GitLink link={"https://github.com/ImMo3n/MovieSearch"}/>
       <TechnologiesUsed
         techArray={["react", "typescript", "styled-component", "react-query"]}
       />
