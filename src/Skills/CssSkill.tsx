@@ -15,7 +15,7 @@ export const CssSkill = () => {
       <ul>
         <li>
           <a target="_blank" href="https://www.w3schools.com/css/">
-            W3Schools آموزش‌های
+          آموزش‌های W3Schools
           </a>
         </li>
         <li>
@@ -23,7 +23,7 @@ export const CssSkill = () => {
             target="_blank"
             href="https://developer.mozilla.org/en-US/docs/Web/CSS"
           >
-            MDN مقاله‌های
+           مقاله‌های MDN 
           </a>
         </li>
         <li>
